@@ -17,3 +17,4 @@ Rolling...
 $(( RANDOM % 6 + 1)) rolled
 "
 done
+
