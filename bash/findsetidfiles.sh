@@ -89,3 +89,4 @@ du -ha | sort -h -r | head -n 10
 # here M indicates size in Mbytes.
 
 # here awk command  manipulates and generates reports.
+
