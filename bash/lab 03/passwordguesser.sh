@@ -61,3 +61,11 @@ else
   fi
 fi 
 
+########## Comments for the lab are as bellow ##########
+
+#This lab is unique. Loops allow us to take a series of commands and keep re-running them until a particular situation is reached. Since we are instructed not to use loop here, I am using if condition for 5 times for getting correct password.
+#here we are using echo command to display a line of text/string on standard output or a file.
+#here we are using read command which is used to read the contents of a line into a variable. In line 17, read is reading user input and storing value in myString respectively.
+#here we are using if statement which allow us to make decisions in our Bash scripts. In line 19, if is checking whether declared password is same as user's entered input.
+#If the given conditional expression is true, it enters and executes the statements enclosed between the keywords. Therefore, then statement is used.
+#here "fi" is fundamental control statement. It indicates the end of the inner if statement and all if statement should end with the keyword “fi” respectively.
