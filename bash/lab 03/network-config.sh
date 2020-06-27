@@ -34,22 +34,50 @@
 #   interface_name=$(ip a |awk '/: e/{gsub(/:/,"");print $2}')
 
 MyHost=$(hostname)
+
 interface=$(ip a |awk '/: e/{gsub(/:/,"");print $2}')
+
 LAN_Address=$(ip a s $interface |awk '/inet /{gsub(/\/.*/,"");print $2}')
+
 LAN_Hostname=$(getent hosts $LAN_Address| awk '{print $2}')
+
 External_IP=$(curl -s icanhazip.com)
+
 Router_address=$(ip route | grep 'default' | awk '{ print $3}')
+
 Router_name=$(getent hosts $Router_address| awk '{print $2}')
+
 Network_Address=$(route -n | awk '/255.255.255.0/''{print $1}')
+
 Network_Name=$(getent networks $Network_Address| awk '{print $1}')
+
 cat <<EOF
+
 Hostname      : $MyHost
+
 LAN IP        : $LAN_Address
+
 LAN Hostname  : $LAN_Hostname
+
 External IP   : $External_IP
+
 Router address: $Router_address
+
 Router Name   : $Router_name
+
 Network IP    : $Network_Address
+
 Network NAME  : $Network_Name
+
 EOF
 
+#########Comments for the lab are as bellow#########
+
+#here we are using $(hostname). We can also use hostnamectl command. Both commands can either set or show the current host, domain or node name of the system/machine.
+#here we are using interface variable to store interface of host system.
+#here we are using LAN_Address variable to cache ip address of a machine.
+#here we are storing hostname in LAN_Hostname variable.
+#here using External_IP to store public ip address.
+#here cat command is helping us to concatenate files and redirect output in terminal or files.
+#here cat <<EOF assigns multi-line string to a shell variable.
+#here EOF at ending id end-of-file, indicate the end of a file of data.
