@@ -82,3 +82,4 @@ for i in "${myargs[@]}" # using for loop to iterate through myargs
 	do
 	echo $i # printing value of myargs array with simulateous change of index number
 	done # exiting for loop
+
